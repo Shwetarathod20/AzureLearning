@@ -1,0 +1,77 @@
+az group create --name CreateVNetQS-rg --location eastus
+az network vnet create --name myVNet --resource-group CreateVNetQS-rg --subnet-name default
+az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no-wait
+az vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --generate-ssh-keys
+az network public-ip show --resource-group CreateVNetQS-rg --name myPublicIP-myVM2 --query ipAddress --output tsv
+az group delete --name CreateVNetQS-rg --yes
+
+PS /home/shweta> az group create --name CreateVNetQS-rg --location eastus                                                                        {                                                     
+  "id": "/subscriptions/3034906e-86f5-4c68-a5ca-264e0af3c361/resourceGroups/CreateVNetQS-rg",
+  "location": "eastus",
+  "managedBy": null,
+  "name": "CreateVNetQS-rg",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+PS /home/shweta> az network vnet create --name myVNet --resource-group CreateVNetQS-rg --subnet-name default                                     
+Resource provider 'Microsoft.Network' used by this operation is not registered. We are registering for you.
+Registration succeeded.
+{
+  "newVNet": {
+    "addressSpace": {
+      "addressPrefixes": [
+        "10.0.0.0/16"
+      ]
+    },
+    "enableDdosProtection": false,
+    "etag": "W/\"b3425476-ea84-4876-83f9-f0d5d020ebcf\"",
+    "id": "/subscriptions/3034906e-86f5-4c68-a5ca-264e0af3c361/resourceGroups/CreateVNetQS-rg/providers/Microsoft.Network/virtualNetworks/myVNet",
+    "location": "eastus",
+    "name": "myVNet",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "CreateVNetQS-rg",
+    "resourceGuid": "cf7b8966-542b-4b64-8566-f73f9ca7fc34",
+    "subnets": [
+      {
+        "addressPrefix": "10.0.0.0/24",
+        "delegations": [],
+        "etag": "W/\"b3425476-ea84-4876-83f9-f0d5d020ebcf\"",
+        "id": "/subscriptions/3034906e-86f5-4c68-a5ca-264e0af3c361/resourceGroups/CreateVNetQS-rg/providers/Microsoft.Network/virtualNetworks/myVNet/subnets/default",
+        "name": "default",
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled",
+        "provisioningState": "Succeeded",
+        "resourceGroup": "CreateVNetQS-rg",
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      }
+    ],
+    "type": "Microsoft.Network/virtualNetworks",
+    "virtualNetworkPeerings": []
+  }
+}
+PS /home/shweta> add-AzRmStorageContainerLegalHold -ResourceGroupName "myResourceGroup" -AccountName "myStorageAccount" -ContainerName "myContainer" -Tag tag1,tagaz vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1            az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1            az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 -          az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --         az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --n        az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no       az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no-      az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no-w     az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no-wa    az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no-wai   az vm create --resource-group CreateVNetQS-rg --name myVM1 --image UbuntuLTS --generate-ssh-keys --public-ip-address myPublicIP-myVM1 --no-wait
+SSH key files '/home/shweta/.ssh/id_rsa' and '/home/shweta/.ssh/id_rsa.pub' have been generated under ~/.ssh to allow SSH access to the VM. If using machines without permanent storage, back up your keys to a safe location.
+Starting Build 2023 event, "az vm/vmss create" command will deploy Trusted Launch VM by default. To know more about Trusted Launch, please visit https://docs.microsoft.com/en-us/azure/virtual-machines/trusted-launch
+It is recommended to use parameter "--public-ip-sku Standard" to create new VM with Standard public IP. Please note that the default public IP used for VM creation will be changed from Basic to Standard in the future.
+PS /home/shweta> add-AzRmStorageContainerLegalHold -ResourceGroupName "myResourceGroup" -AccountName "myStorageAccount" -ContainerName "myContainer" -Tag tag1,tagaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --geneaz vm create --resource-group CreateVNetQS-rg --name myVM2 --image UbuntuLTS --public-ip-address myPublicIP-myVM2 --public-ip-sku Standard --generate-ssh-keys
+
+Starting Build 2023 event, "az vm/vmss create" command will deploy Trusted Launch VM by default. To know more about Trusted Launch, please visit https://docs.microsoft.com/en-us/azure/virtual-machines/trusted-launch
+{
+  "fqdns": "",
+  "id": "/subscriptions/3034906e-86f5-4c68-a5ca-264e0af3c361/resourceGroups/CreateVNetQS-rg/providers/Microsoft.Compute/virtualMachines/myVM2",
+  "location": "eastus",
+  "macAddress": "00-22-48-34-C4-C1",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.5",
+  "publicIpAddress": "20.163.199.177",
+  "resourceGroup": "CreateVNetQS-rg",
+  "zones": ""
+}
+PS /home/shweta> add-AzRmStorageContainerLegalHold -ResourceGroupName "myResourceGroup" -AccountName "myStorageAccount" -ContainerName "myContain                 az network public-ip show --resource-group CreateVNetQS-rg --name myPublicIP-myVM2 --query ipAddress --output tsv               
+20.163.199.177
+PS /home/shweta> add-AzRmStorageContainerLegalHold -ResourceGroupName "myResourceGroup" -AccountName "myStorageAccount" -ContainerName "myContain                 az group delete --name CreateVNetQS-rg --yes                                                                                    
+
+PS /home/shweta>
